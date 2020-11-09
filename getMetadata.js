@@ -17,7 +17,7 @@ const getMetadata = async () => {
         return collectionRef.getIDs()
       }
     `),
-    fcl.args([ fcl.arg(config.testUserAddress, types.Address) ]),
+    fcl.args([ fcl.arg(config.testUserAddress, types.Address) ])
   ]);
   const ids = await fcl.decode(idsResponse);
   console.log('ids', ids);
@@ -36,11 +36,10 @@ const getMetadata = async () => {
         return metadata
       }
     `),
-    fcl.args([ fcl.arg(config.testUserAddress, types.Address), fcl.arg(id, types.UInt64) ]),
+    fcl.args([ fcl.arg(config.testUserAddress, types.Address), fcl.arg(id, types.UInt64) ])
   ]);
   const metadata = await fcl.decode(metadataResponse);
   console.log(`metadata of id:${id}`, metadata);
-
 }
 
 getMetadata();

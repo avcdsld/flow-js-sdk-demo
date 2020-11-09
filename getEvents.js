@@ -16,7 +16,7 @@ const getEvents = async () => {
   const contractName = 'Market';
   const eventName = 'MomentListed';
   const eventType = `A.${contractAddress}.${contractName}.${eventName}`;
-  const eventsResponse = await fcl.send(await sdk.build([sdk.getEvents(eventType, fromBlock, toBlock)]));
+  const eventsResponse = await fcl.send(await sdk.build([ sdk.getEvents(eventType, fromBlock, toBlock) ]));
   const events = await fcl.decode(eventsResponse);
   console.log(events);
 }
