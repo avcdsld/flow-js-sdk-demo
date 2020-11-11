@@ -92,7 +92,7 @@ const fcl = require('@onflow/fcl');
 fcl.config().put('accessNode.api', config.apiUrl);
 ```
 
-現在、メインネットのノードとして、Flow 公式の `https://access-mainnet-beta.onflow.org` または [Blocto ウォレット](https://blocto.portto.io/) が提供する `https://flow-access-mainnet.portto.io` を利用可能です。
+現在、メインネットのノードとして、Flow 公式の `https://access-mainnet-beta.onflow.org` または [Blocto ウォレット](https://blocto.portto.io/)が提供する `https://flow-access-mainnet.portto.io` を利用可能です。
 
 
 ### イベントの取得
@@ -163,7 +163,7 @@ Cadence コードの引数には、`fcl.arg()` を使って、値と型を渡し
 
 ### NFT のメタデータの取得
 
-現在の Flow の NFT は、まだメタデータの標準があまり議論されていません。NBA TopShot の場合は、`TopShot` コントラクトに、トークンの `playID` を使って問い合わせることでメタデータを取得できます。
+現在の Flow の NFT は、まだメタデータの標準があまり議論されていませんが、NBA TopShot の場合は、`TopShot` コントラクトに、トークンの `playID` を使って問い合わせることでメタデータを取得できます。
 
 取得するための Cadence のスクリプトは下記です。
 
@@ -186,7 +186,7 @@ pub fun main(account: Address, id: UInt64): {String: String} {
 - コレクションがあれば、引数で受け取ったトークンID を使って、NFT の参照を取得
 - NFT のプロパティにある `playID` を使って、`TopShot` コントラクトからメタデータを取得
 
-このスクリプトも、先ほどの ID 一覧取得のときと同じ用に、クライアントから下記のように送信します。
+このスクリプトも、先ほどの ID 一覧取得のときと同じように、クライアントから下記のように送信します。
 
 ```js
 const types = require('@onflow/types'); // 引数に渡す型の情報
