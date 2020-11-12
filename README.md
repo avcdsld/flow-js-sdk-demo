@@ -115,7 +115,7 @@ A.＜コントラクトアドレス＞.＜コントラクト名＞.＜イベン�
 例: A.c1e4f4f4c4257510.Market.MomentListed
 ```
 
-コントラクト名とイベント名は、対象のコントラクトのコードから確認します。[NBA TopShot のコードはここで公開されています](https://github.com/dapperlabs/nba-smart-contracts/tree/f8def3/contracts)。
+コントラクト名とイベント名は、対象のコントラクトのコードから確認します。[NBA Top Shot のコードはここで公開されています](https://github.com/dapperlabs/nba-smart-contracts/tree/f8def3/contracts)。
 
 イベント取得の結果は、少し扱いにくい構造をしており、下記のコードで変換して読みやすくできます。ただ、この変換によって、ブロック番号などの情報が消えてしまうので、これらを使いたい場合は元の結果をみる必要があります。
 
@@ -163,7 +163,7 @@ Cadence コードの引数には、`fcl.arg()` を使って、値と型を渡し
 
 ### NFT のメタデータの取得
 
-現在の Flow の NFT は、まだメタデータの標準があまり議論されていませんが、NBA TopShot の場合は、`TopShot` コントラクトに、トークンの `playID` を使って問い合わせることでメタデータを取得できます。
+現在の Flow の NFT は、まだメタデータの標準があまり議論されていませんが、NBA Top Shot の場合は、`TopShot` コントラクトに、トークンの `playID` を使って問い合わせることでメタデータを取得できます。
 
 取得するための Cadence のスクリプトは下記です。
 
@@ -203,7 +203,7 @@ const metadata = await fcl.decode(metadataResponse);
 - Flow について: https://ja.onflow.org/primer
 - Flow JS SDK のドキュメント（ちょっと情報が足りないですが…）: https://github.com/onflow/flow-js-sdk
 - Cadence 言語のドキュメント: https://docs.onflow.org/tutorial/cadence/00-introduction/
-- NBA TopShot コントラクトのコード（Cadence 言語）: https://github.com/dapperlabs/nba-smart-contracts/tree/f8def3/contracts
+- NBA Top Shot コントラクトのコード（Cadence 言語）: https://github.com/dapperlabs/nba-smart-contracts/tree/f8def3/contracts
 - Flow コミュニティフォーラム（不明点はここで聞けます！）: https://forum.onflow.org/
 - Discord チャンネル（不明点はここで聞けます！）: https://discord.gg/yY4zbvf
 - YouTube チャンネル: https://www.youtube.com/channel/UCs9r5lqmYQsKCpLB9jKwocg
