@@ -131,8 +131,7 @@ const events = await fcl.decode(eventsResponse);
 
 ### Retrieve the list of token IDs.
 
-Flow の NFT は、所有するアカウントのストレージに直接格納されています。あるアカウント（アドレス）が所有する NFT のトークンID一覧は、Cadence 言語で書かれた下記のスクリプトをノードに送信することで取得できます。
-
+Flow's NFTs are stored directly in the storage of the account you own. You can get the list of NFT token IDs owned by an account (address) by sending the following script written in Cadence language to the node.
 ```
 import TopShot from 0x0b2a3299cc857e29
 
@@ -153,7 +152,7 @@ In the above code,  what we're doing is as follows.
 And send this script to the nodes using the client by the below code.
 
 ```js
-const types = require('@onflow/types'); // 引数に渡す型の情報
+const types = require('@onflow/types'); 
 
 const idsResponse = await fcl.send([
   fcl.script(＜Cadence のスクリプト＞)
@@ -161,8 +160,8 @@ const idsResponse = await fcl.send([
 ]);
 const ids = await fcl.decode(idsResponse);
 ```
+Pass value and type as argument to Cadence code using `fcl.arg()` .
 
-Cadence コードの引数には、`fcl.arg()` を使って、値と型を渡します。
 
 
 ### Retreive metadata of NFT
@@ -192,26 +191,26 @@ What it does is ...
 - Get metadata from a TopShot contract using the `playID` in the NFT properties.
 - Send script using the client to the node.
 
-このスクリプトも、先ほどの ID 一覧取得のときと同じように、クライアントから下記のように送信します。
+And send this script to the nodes using the client by the below code.
 
 ```js
-const types = require('@onflow/types'); // 引数に渡す型の情報
+const types = require('@onflow/types');
 
 const metadataResponse = await fcl.send([
-  fcl.script(＜Cadence のスクリプト＞)
-  fcl.args([ fcl.arg(＜ユーザーのアドレス＞, types.Address), fcl.arg(＜トークンID＞, types.UInt64) ])
+  fcl.script(＜Cadence Script＞)
+  fcl.args([ fcl.arg(＜User Address＞, types.Address), fcl.arg(＜Token ID＞, types.UInt64) ])
 ]);
 const metadata = await fcl.decode(metadataResponse);
 ```
 
 
-## For Detail
-- Flow JS SDK のドキュメント（ちょっと情報が足りないですが…）: https://github.com/onflow/flow-js-sdk
-- Cadence 言語のドキュメント: https://docs.onflow.org/tutorial/cadence/00-introduction/
-- NBA Top Shot コントラクトのコード（Cadence 言語）: https://github.com/dapperlabs/nba-smart-contracts/tree/f8def3/contracts
-- Flow コミュニティフォーラム（不明点はここで聞けます！）: https://forum.onflow.org/
-- Discord チャンネル（不明点はここで聞けます！）: https://discord.gg/yY4zbvf
-- YouTube チャンネル: https://www.youtube.com/channel/UCs9r5lqmYQsKCpLB9jKwocg
-- Cadence 言語入門（私が日本語でまとめたスライド資料です）: https://speakerdeck.com/avcdsld/flow-cadence-introduction
+## Reference
+- Flow JS SDK Official Documents: https://github.com/onflow/flow-js-sdk
+- Cadence Language Reference: https://docs.onflow.org/tutorial/cadence/00-introduction/
+- NBA Top Shot Contract （Cadence）: https://github.com/dapperlabs/nba-smart-contracts/tree/f8def3/contracts
+- Flow Community Forum: https://forum.onflow.org/
+- Discord Channel : https://discord.gg/yY4zbvf
+- YouTube Channel: https://www.youtube.com/channel/UCs9r5lqmYQsKCpLB9jKwocg
 
-もしくは、私の twitter: [@arandoros](https://twitter.com/arandoros) （わかる範囲で回答できます！）
+You can ask me directly to our twitter: [@arandoros](https://twitter.com/arandoros)
+Translated by [@tokchin](https://twitter.com/tokchin)
