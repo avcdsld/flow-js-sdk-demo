@@ -11,7 +11,7 @@ Below is a sample code to get the event from the NBA TopShot code contract.
 $ yarn install
 ```
 
-### Get Events（Get events happened in recent 500 blocks（Approx 500 seconds））
+### Get Events (Get events happened in recent 500 blocks (Approx 500 seconds))
 ```sh
 $ node getEvents
 ```
@@ -83,7 +83,7 @@ metadata of id:205853 {
 
 ### Set Client
 
-Client for JavaScript is available as npm package called [@onflow/fcl](https://www.npmjs.com/package/@onflow/fcl) .
+Client for JavaScript is available as npm package called [@onflow/fcl](https://www.npmjs.com/package/@onflow/fcl).
 
 Set address of node to the client.
 
@@ -94,8 +94,8 @@ fcl.config().put('accessNode.api', config.apiUrl);
 
 You can currently use the Flow official node or the one provided by Blocto to access main-net. Below is the detail.
 
-Flow:  "https://access-mainnet-beta.onflow.org"
-Blocto: "https://flow-access-mainnet.portto.io" 
+- Flow: "https://access-mainnet-beta.onflow.org"
+- Blocto: "https://flow-access-mainnet.portto.io" 
 
 
 ### Retreive Events
@@ -103,7 +103,7 @@ Blocto: "https://flow-access-mainnet.portto.io"
 We can retrieve the events recorded in Flow blockchain with the following code.
 
 ```js
-const sdk = require('@onflow/sdk'); // イベント取得の interaction オブジェクトを生成するために必要
+const sdk = require('@onflow/sdk'); // Required to generate the interaction object for event fetching
 
 const eventsResponse = await fcl.send(await sdk.build([ sdk.getEvents(eventType, fromBlock, toBlock) ]));
 ```
@@ -113,7 +113,7 @@ The arguments for `sdk.getEvents()` must be set with three arguments which are, 
 The event type must be in the following format. Note that the contract address does not start with "0x".
 
 ```
-A.＜Contract Address＞.＜Contract Name＞.＜Event Name＞
+A.<Contract Address>.<Contract Name>.<Event Name>
 
 Example: A.c1e4f4f4c4257510.Market.MomentListed
 ```
@@ -155,8 +155,8 @@ And send this script to the nodes using the client by the below code.
 const types = require('@onflow/types'); 
 
 const idsResponse = await fcl.send([
-  fcl.script(＜Cadence のスクリプト＞)
-  fcl.args([ fcl.arg(＜ユーザーのアドレス＞, types.Address) ])
+  fcl.script(<Cadence Script>)
+  fcl.args([ fcl.arg(<User Address>, types.Address) ])
 ]);
 const ids = await fcl.decode(idsResponse);
 ```
@@ -168,7 +168,7 @@ Pass value and type as argument to Cadence code using `fcl.arg()` .
 
 
 
-Currently,  metadata for Flow NFT is not standardized, still under discussion. In the case of NBA Top Shot, you can get the metadata by querying the `TopShot contract` with the token `playID`. `playId` is a unique ID which all NBA Top Shot token has, as a token ID in ERC721.
+Currently, metadata for Flow NFT is not standardized, still under discussion. In the case of NBA Top Shot, you can get the metadata by querying the `TopShot contract` with the token `playID`. `playId` is a unique ID which all NBA Top Shot token has, as a token ID in ERC721.
 
 The cadence script is as follows.
 ```js
@@ -197,8 +197,8 @@ And send this script to the nodes using the client by the below code.
 const types = require('@onflow/types');
 
 const metadataResponse = await fcl.send([
-  fcl.script(＜Cadence Script＞)
-  fcl.args([ fcl.arg(＜User Address＞, types.Address), fcl.arg(＜Token ID＞, types.UInt64) ])
+  fcl.script(<Cadence Script>)
+  fcl.args([ fcl.arg(<User Address>, types.Address), fcl.arg(<Token ID>, types.UInt64) ])
 ]);
 const metadata = await fcl.decode(metadataResponse);
 ```
@@ -207,9 +207,9 @@ const metadata = await fcl.decode(metadataResponse);
 ## Reference
 - Flow JS SDK Official Documents: https://github.com/onflow/flow-js-sdk
 - Cadence Language Reference: https://docs.onflow.org/tutorial/cadence/00-introduction/
-- NBA Top Shot Contract （Cadence）: https://github.com/dapperlabs/nba-smart-contracts/tree/f8def3/contracts
+- NBA Top Shot Contract (Cadence): https://github.com/dapperlabs/nba-smart-contracts/tree/f8def3/contracts
 - Flow Community Forum: https://forum.onflow.org/
-- Discord Channel : https://discord.gg/yY4zbvf
+- Discord Channel: https://discord.gg/yY4zbvf
 - YouTube Channel: https://www.youtube.com/channel/UCs9r5lqmYQsKCpLB9jKwocg
 
 You can ask me directly to our twitter: [@arandoros](https://twitter.com/arandoros)
