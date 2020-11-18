@@ -1,5 +1,7 @@
 # Flow JavaScript SDK Demo
 
+[日本語版 README はこちら](./README.ja.md)
+
 Below is a sample code to get the event from the NBA TopShot code contract.
 
 ## Requirement
