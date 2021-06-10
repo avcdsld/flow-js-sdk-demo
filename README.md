@@ -120,7 +120,7 @@ A.<Contract Address>.<Contract Name>.<Event Name>
 Example: A.c1e4f4f4c4257510.Market.MomentListed
 ```
 You can find the contract name and event name from the source code of the target contract.
-[The one for NBA Top Shot can be available here.](https://github.com/dapperlabs/nba-smart-contracts/tree/f8def3/contracts)。
+[The one for NBA Top Shot can be available here](https://github.com/dapperlabs/nba-smart-contracts/tree/f8def3/contracts).
 
 The result which we received from the library is not human readable.
 But you can convert with the following code to make it easier to read.
