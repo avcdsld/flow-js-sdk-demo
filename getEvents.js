@@ -6,7 +6,8 @@ const getEvents = async () => {
   fcl.config().put('accessNode.api', config.apiUrl);
 
   // 最新ブロック取得
-  const latestBlockResponse = await fcl.send([ fcl.getLatestBlock() ]);
+  const isSealed = false;
+  const latestBlockResponse = await fcl.send([ fcl.getBlock(isSealed) ]);
   const latestBlock = await fcl.decode(latestBlockResponse);
   const toBlock = latestBlock.height;
   const fromBlock = toBlock - 500;
